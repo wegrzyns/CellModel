@@ -15,6 +15,7 @@ public class Silnik {
     private static final String AKONITAN = "cis-Akonitan";
     private static final String IZOMERYZACJA = "izomeryzacja";
     private static final String LOG_FILE_NAME = "reaction_logs.log";
+    public static final String REACTION_LOGGER_NAME = "MyLog";
 
 
     public static void main(String[] args) {
@@ -43,14 +44,14 @@ public class Silnik {
     }
 
     private static void configureLogging() {
-        Logger logger = Logger.getLogger("MyLog");
+        Logger logger = Logger.getLogger(REACTION_LOGGER_NAME);
         FileHandler fh;
 
         try {
 
             // This block configure the logger with handler and formatter
             System.out.println(System.getProperty("user.dir"));
-            fh = new FileHandler(System.getProperty("user.dir")+"\\"+LOG_FILE_NAME);
+            fh = new FileHandler(System.getProperty("user.dir")+"\\"+LOG_FILE_NAME, true);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);

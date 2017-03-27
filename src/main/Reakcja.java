@@ -6,7 +6,7 @@ import java.util.logging.Logger;
  */
 public class Reakcja {
 
-    private static Logger logger = Logger.getLogger(Reakcja.class.getName());
+    private static Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
     private String nazwa;
     private HashMap<Reagent, Reagent> reactionMapping;
 
