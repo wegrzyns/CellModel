@@ -15,7 +15,7 @@ public class Reakcja {
         this.reactionMapping = reactionMapping;
     }
 
-    public Reagent Reaguj(Reagent reagent) {
+    public Reagent reaguj(Reagent reagent) {
         if (reactionMapping.containsKey(reagent)) {
             createReactionLog(reagent, reactionMapping.get(reagent));
             return reactionMapping.get(reagent);

@@ -2,6 +2,8 @@ import javafx.geometry.Point2D;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -18,7 +20,7 @@ public class Silnik {
     public static final String REACTION_LOGGER_NAME = "MyLog";
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         configureLogging();
 
         HashMap<Reagent, Reagent> mapaIzomeryzacji = new HashMap<>();
@@ -29,8 +31,9 @@ public class Silnik {
         Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, mapaIzomeryzacji);
 
         Substrat czastka1 = generujSubstrat(AKONITAN);
-        System.out.println(izomeryzacja.Reaguj(czastka1).getCzastka().getNazwa());
+        System.out.println(izomeryzacja.reaguj(czastka1).getCzastka().getNazwa());
 
+        prostaPetla(izomeryzacja);
     }
 
     private static Substrat generujSubstrat(String nazwa) {
@@ -61,6 +64,23 @@ public class Silnik {
 
         } catch (SecurityException | IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void prostaPetla(Reakcja reakcja) throws InterruptedException {
+        List<Reagent> czastki = new LinkedList<>();
+        czastki.add(generujSubstrat(CYTRYNIAN));
+        czastki.add(generujSubstrat(CYTRYNIAN));
+        czastki.add(generujSubstrat(CYTRYNIAN));
+        Komorka komorka = new Komorka(czastki);
+
+
+        while(true){        //krok symulacji? (problem z modyfikacja struktury danych w czasie iteracji w przypadku iteracji po elementach
+            czastki.add(reakcja.reaguj(czastki.get(0)));
+            czastki.remove(0);
+            komorka.getReagenty().forEach(reagent -> System.out.println(reagent.toString()));
+            System.out.println("-----------------------------");
+            Thread.sleep(2000);
         }
     }
 }
