@@ -1,4 +1,7 @@
+import enums.CzastkaEnum;
+
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -8,7 +11,7 @@ public class Reakcja {
 
     private static Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
     private String nazwa;
-    private HashMap<Reagent, Reagent> reactionMapping;
+    private Map<Map<CzastkaEnum, Integer>, Map<CzastkaEnum, Integer>> reactionMapping;
 
     public Reakcja(String nazwa, HashMap<Reagent, Reagent> reactionMapping) {
         this.nazwa = nazwa;

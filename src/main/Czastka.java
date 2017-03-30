@@ -1,3 +1,4 @@
+import enums.CzastkaEnum;
 import javafx.geometry.Point2D;
 
 /**
@@ -5,19 +6,19 @@ import javafx.geometry.Point2D;
  */
 public class Czastka {
 
-    private String nazwa;
+    private CzastkaEnum nazwa;
     private Point2D location;
 
-    public Czastka(String nazwa, Point2D location) {
+    public Czastka(CzastkaEnum nazwa, Point2D location) {
         this.nazwa = nazwa;
         this.location = location;
     }
 
-    public String getNazwa() {
+    public CzastkaEnum getNazwa() {
         return nazwa;
     }
 
-    public void setNazwa(String nazwa) {
+    public void setNazwa(CzastkaEnum nazwa) {
         this.nazwa = nazwa;
     }
 
@@ -29,19 +30,23 @@ public class Czastka {
         this.location = location;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Czastka)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Czastka czastka = (Czastka) o;
 
-        if (!nazwa.equals(czastka.nazwa)) return false;
+        if (nazwa != czastka.nazwa) return false;
         return location != null ? location.equals(czastka.location) : czastka.location == null;
+
     }
 
     @Override
     public int hashCode() {
-        return nazwa.hashCode();
+        int result = nazwa.hashCode();
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        return result;
     }
 }
