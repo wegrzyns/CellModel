@@ -1,7 +1,8 @@
+package logic;
+
 import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -14,6 +15,11 @@ public class Reakcja {
     private String nazwa;
     private Map<CellResourceMap, CellResourceMap> reactionMapping;
     private Komorka komorka;
+
+    public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping) {
+        this.nazwa = nazwa;
+        this.reactionMapping = reactionMapping;
+    }
 
     public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping, Komorka komorka) {
         this.nazwa = nazwa;

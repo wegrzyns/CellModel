@@ -1,3 +1,5 @@
+package logic;
+
 import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 

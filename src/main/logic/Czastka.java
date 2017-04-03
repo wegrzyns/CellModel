@@ -1,3 +1,5 @@
+package logic;
+
 import enums.CzastkaEnum;
 import javafx.geometry.Point2D;
 
