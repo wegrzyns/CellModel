@@ -1,3 +1,4 @@
+import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 
 import java.util.HashMap;
@@ -11,25 +12,75 @@ public class Reakcja {
 
     private static Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
     private String nazwa;
-    private Map<Map<CzastkaEnum, Integer>, Map<CzastkaEnum, Integer>> reactionMapping;
+    private Map<CellResourceMap, CellResourceMap> reactionMapping;
+    private Komorka komorka;
 
-    public Reakcja(String nazwa, Map<Map<CzastkaEnum, Integer>, Map<CzastkaEnum, Integer>> reactionMapping) {
+    public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping, Komorka komorka) {
         this.nazwa = nazwa;
         this.reactionMapping = reactionMapping;
+        this.komorka = komorka;
     }
 
-    public Map<CzastkaEnum, Integer> reaguj(Map<CzastkaEnum, Integer> reagenty) {
+    public void reaguj() {
+        for(Map.Entry<CellResourceMap, CellResourceMap> reaction: reactionMapping.entrySet() ) {
+            if( pobierzCzastkiDoReakcji(reaction.getKey()) ) {
+                dodajCzastkiPoReakcji(reaction.getValue());
 
-        logger.info("Reaction mapping not found for \"" + reagenty.toString() + "\"");
-        return null;
+                logger.info(createReactionLog(reaction.getKey(), reaction.getValue()));
+            }
+            else{
+                logger.info("Insufficient resources to perform reaction \"" +
+                        createReactionLog(reaction.getKey(), reaction.getValue()) + "\"");
+                logger.info("Aborting reaction");
+                break;
+            }
+
+        }
     }
 
-    private void createReactionLog(Map<CzastkaEnum, Integer> substrat, Map<CzastkaEnum, Integer> produkt) {
+    private boolean pobierzCzastkiDoReakcji(CellResourceMap wymaganeCzastki) {
+        if (!contains(wymaganeCzastki))
+            return false;
+        for (CzastkaEnum czastka : wymaganeCzastki.keySet()) {
+            int iloscCzastekwKomorce = komorka.getMapaCzastek().get(czastka);
+            int iloscCzastekDoUsuniecia = wymaganeCzastki.get(czastka);
+            int iloscCzastek = iloscCzastekwKomorce - iloscCzastekDoUsuniecia;
+            komorka.getMapaCzastek().put(czastka, iloscCzastek);
+        }
+
+        return true;
+    }
+
+    private void dodajCzastkiPoReakcji(CellResourceMap dodawaneCzastki) {
+
+        for (CzastkaEnum czastka : dodawaneCzastki.keySet()) {
+            if (komorka.getMapaCzastek().containsKey(czastka)) {
+                synchronized (komorka.getMapaCzastek()) {
+                    int aktualnaIlosc = komorka.getMapaCzastek().get(czastka);
+                    int nowaIlosc = aktualnaIlosc + dodawaneCzastki.get(czastka);
+                    komorka.getMapaCzastek().put(czastka, nowaIlosc);
+                }
+            } else {
+                komorka.getMapaCzastek().put(czastka, dodawaneCzastki.get(czastka));
+            }
+        }
+
+    }
+
+    private boolean contains(CellResourceMap wymaganeCzastki) {
+        for (CzastkaEnum czastka : wymaganeCzastki.keySet()) {
+            if(!komorka.getMapaCzastek().containsKey(czastka)) return false;
+            if(komorka.getMapaCzastek().get(czastka) < wymaganeCzastki.get(czastka)) return false;
+        }
+        return true;
+    }
+
+    private String createReactionLog(CellResourceMap substraty, CellResourceMap produkty) {
         String reactionLog = nazwa +
                 ": " +
-                substrat.toString() +
+                substraty.toReactionString() +
                 " -> " +
-                produkt.toString();
-        logger.info(reactionLog);
+                produkty.toReactionString();
+        return reactionLog;
     }
 }

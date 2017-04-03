@@ -1,8 +1,10 @@
+import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 import javafx.geometry.Point2D;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.FileHandler;
@@ -23,27 +25,41 @@ public class Silnik {
 
         configureLogging();
 
-        HashMap<Reagent, Reagent> mapaIzomeryzacji = new HashMap<>();
+        HashMap<CellResourceMap, CellResourceMap> reakcjaIzomeryzacji = prepareIzomerationReaction();
 
-        mapaIzomeryzacji.put(generujSubstrat(CzastkaEnum.CYTRYNIAN), generujProdukt(CzastkaEnum.AKONITAN));
-        mapaIzomeryzacji.put(generujSubstrat(CzastkaEnum.AKONITAN), generujProdukt(CzastkaEnum.IZOCYTRYNIAN));
+        Komorka komorka = prepareCell();
 
-//        Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, mapaIzomeryzacji);
-
-        Substrat czastka1 = generujSubstrat(CzastkaEnum.AKONITAN);
-//        System.out.println(izomeryzacja.reaguj(czastka1).getCzastka().getNazwa());
-//
-//        prostaPetla(izomeryzacja);
+        Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, komorka);
+        izomeryzacja.reaguj();
     }
 
-    private static Substrat generujSubstrat(CzastkaEnum nazwa) {
-        Czastka czastka = new Czastka(nazwa, new Point2D(0,0));
-        return new Substrat(czastka, 1);
+    private static Komorka prepareCell() {
+        CellResourceMap zasobyKomorki =  new CellResourceMap();
+        zasobyKomorki.put(CzastkaEnum.CYTRYNIAN, 100);
+        return new Komorka(zasobyKomorki);
+
     }
 
-    private static Produkt generujProdukt(CzastkaEnum nazwa) {
-        Czastka czastka = new Czastka(nazwa, new Point2D(0,0));
-        return new Produkt(czastka, 1);
+    private static HashMap<CellResourceMap, CellResourceMap> prepareIzomerationReaction() {
+        HashMap<CellResourceMap, CellResourceMap> reakcjaIzomeryzacji = new LinkedHashMap<>();
+        CellResourceMap substraty1 = new CellResourceMap();
+        CellResourceMap produkty1 = new CellResourceMap();
+        CellResourceMap substraty2 = new CellResourceMap();
+        CellResourceMap produkty2 = new CellResourceMap();
+
+        substraty1.put(CzastkaEnum.CYTRYNIAN, 1);
+        produkty1.put(CzastkaEnum.AKONITAN, 1);
+        produkty1.put(CzastkaEnum.WODA, 1);
+
+        reakcjaIzomeryzacji.put(substraty1, produkty1);
+
+        substraty2.put(CzastkaEnum.AKONITAN, 1);
+        substraty2.put(CzastkaEnum.WODA, 1);
+        produkty2.put(CzastkaEnum.IZOCYTRYNIAN, 1);
+
+        reakcjaIzomeryzacji.put(substraty2, produkty2);
+
+        return reakcjaIzomeryzacji;
     }
 
     private static void configureLogging() {
@@ -67,20 +83,4 @@ public class Silnik {
         }
     }
 
-    private static void prostaPetla(Reakcja reakcja) throws InterruptedException {
-        List<Reagent> czastki = new LinkedList<>();
-        czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
-        czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
-        czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
-//        Komorka komorka = new Komorka(czastki);
-
-
-        while(true){        //krok symulacji? (problem z modyfikacja struktury danych w czasie iteracji w przypadku iteracji po elementach
-//            czastki.add(reakcja.reaguj(czastki.get(0)));
-            czastki.remove(0);
-//            komorka.getReagenty().forEach(reagent -> System.out.println(reagent.toString()));
-            System.out.println("-----------------------------");
-            Thread.sleep(2000);
-        }
-    }
 }
