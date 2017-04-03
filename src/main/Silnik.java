@@ -28,12 +28,12 @@ public class Silnik {
         mapaIzomeryzacji.put(generujSubstrat(CzastkaEnum.CYTRYNIAN), generujProdukt(CzastkaEnum.AKONITAN));
         mapaIzomeryzacji.put(generujSubstrat(CzastkaEnum.AKONITAN), generujProdukt(CzastkaEnum.IZOCYTRYNIAN));
 
-        Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, mapaIzomeryzacji);
+//        Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, mapaIzomeryzacji);
 
         Substrat czastka1 = generujSubstrat(CzastkaEnum.AKONITAN);
-        System.out.println(izomeryzacja.reaguj(czastka1).getCzastka().getNazwa());
-
-        prostaPetla(izomeryzacja);
+//        System.out.println(izomeryzacja.reaguj(czastka1).getCzastka().getNazwa());
+//
+//        prostaPetla(izomeryzacja);
     }
 
     private static Substrat generujSubstrat(CzastkaEnum nazwa) {
@@ -72,13 +72,13 @@ public class Silnik {
         czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
         czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
         czastki.add(generujSubstrat(CzastkaEnum.CYTRYNIAN));
-        Komorka komorka = new Komorka(czastki);
+//        Komorka komorka = new Komorka(czastki);
 
 
         while(true){        //krok symulacji? (problem z modyfikacja struktury danych w czasie iteracji w przypadku iteracji po elementach
-            czastki.add(reakcja.reaguj(czastki.get(0)));
+//            czastki.add(reakcja.reaguj(czastki.get(0)));
             czastki.remove(0);
-            komorka.getReagenty().forEach(reagent -> System.out.println(reagent.toString()));
+//            komorka.getReagenty().forEach(reagent -> System.out.println(reagent.toString()));
             System.out.println("-----------------------------");
             Thread.sleep(2000);
         }

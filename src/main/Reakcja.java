@@ -13,21 +13,18 @@ public class Reakcja {
     private String nazwa;
     private Map<Map<CzastkaEnum, Integer>, Map<CzastkaEnum, Integer>> reactionMapping;
 
-    public Reakcja(String nazwa, HashMap<Reagent, Reagent> reactionMapping) {
+    public Reakcja(String nazwa, Map<Map<CzastkaEnum, Integer>, Map<CzastkaEnum, Integer>> reactionMapping) {
         this.nazwa = nazwa;
         this.reactionMapping = reactionMapping;
     }
 
-    public Reagent reaguj(Reagent reagent) {
-        if (reactionMapping.containsKey(reagent)) {
-            createReactionLog(reagent, reactionMapping.get(reagent));
-            return reactionMapping.get(reagent);
-        }
-        logger.info("Reaction mapping not found for \"" + reagent.toString() + "\"");
-        return reagent;
+    public Map<CzastkaEnum, Integer> reaguj(Map<CzastkaEnum, Integer> reagenty) {
+
+        logger.info("Reaction mapping not found for \"" + reagenty.toString() + "\"");
+        return null;
     }
 
-    private void createReactionLog(Reagent substrat, Reagent produkt) {
+    private void createReactionLog(Map<CzastkaEnum, Integer> substrat, Map<CzastkaEnum, Integer> produkt) {
         String reactionLog = nazwa +
                 ": " +
                 substrat.toString() +
