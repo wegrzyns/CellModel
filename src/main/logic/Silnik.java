@@ -34,17 +34,9 @@ public class Silnik {
         Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, komorka);
         izomeryzacja.reaguj();
 
-        ReakcjaSetParser n = new ReakcjaSetParser();
-
-        try {
-            n.dodajNowaReakcja("zajebista rekacja", "3_Woda + 2_Akonitan -> 5_Woda + 1_Cytrynian");
-            n.dodajNowaReakcja("ok", "2_Woda + 5_Akonitan -> 4_Woda + 3_Akonitan");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         ReakcjaSetParser rsp = new ReakcjaSetParser();
         try {
+            rsp.dodajNowaReakcja("ok", "2_Woda + 5_Akonitan -> 4_Woda + 3_Akonitan");
             List<ReakcjaModel> r = rsp.pobierzReakcje();
             r.forEach(System.out::println);
         } catch (IOException e) {

@@ -29,9 +29,9 @@ public class ReakcjaSetParser {
             Map<CzastkaEnum, Integer> prawaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(1));
 
             ReakcjaModel nowaReakcja = new ReakcjaModel(nazwa, lewaStronaReakcji, prawaStronaReakcji);
-//            gson.toJson(nowaReakcja, writer);
             mapper.writeValue(writer, nowaReakcja);
             writer.close();
+
             return true;
         } catch (Exception e) {
 
@@ -43,13 +43,6 @@ public class ReakcjaSetParser {
         List<ReakcjaModel> result = new LinkedList<>();
         ObjectMapper mapper = new ObjectMapper();
         String filename = "Output.json";
-//        try (Reader reader = new InputStreamReader(new FileInputStream(file))) {
-//            Gson gson = new GsonBuilder().create();
-//            ReakcjaModel rm = gson.fromJson(reader, ReakcjaModel.class);
-//            result.add(rm);
-//        }
-//        Gson gson = new Gson();
-//        JsonReader reader = new JsonReader(new FileReader(filename));
 
         ReakcjaModel rm = mapper.readValue(new File(filename), ReakcjaModel.class);
         result.add(rm);
