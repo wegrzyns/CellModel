@@ -1,16 +1,10 @@
-package controller;
+package util;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import decorators.CellResourceMap;
 import enums.CzastkaEnum;
-import logic.Komorka;
-import logic.Reakcja;
 import model.ReakcjaModel;
+import org.codehaus.jackson.map.ObjectMapper;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,12 +14,13 @@ import java.util.regex.Pattern;
  * 22:15
  * Project: MiSS.
  */
-public class NowaReakcjaController {
+public class ReakcjaSetParser {
 
-    private Gson gson = new GsonBuilder().create();
     private String pattern = "->";
 
+
     public boolean dodajNowaReakcja(String nazwa, String wzorNowejReakcji) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
         List<String> reakcjaPodzielona = podzielReakcje(wzorNowejReakcji);
 
         try(Writer writer = new FileWriter("Output.json")) {
@@ -34,16 +29,32 @@ public class NowaReakcjaController {
             Map<CzastkaEnum, Integer> prawaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(1));
 
             ReakcjaModel nowaReakcja = new ReakcjaModel(nazwa, lewaStronaReakcji, prawaStronaReakcji);
-
-            gson.toJson(nowaReakcja, writer);
-
+//            gson.toJson(nowaReakcja, writer);
+            mapper.writeValue(writer, nowaReakcja);
             writer.close();
-
             return true;
         } catch (Exception e) {
 
         }
         return false;
+    }
+
+    public List<ReakcjaModel> pobierzReakcje() throws IOException {
+        List<ReakcjaModel> result = new LinkedList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        String filename = "Output.json";
+//        try (Reader reader = new InputStreamReader(new FileInputStream(file))) {
+//            Gson gson = new GsonBuilder().create();
+//            ReakcjaModel rm = gson.fromJson(reader, ReakcjaModel.class);
+//            result.add(rm);
+//        }
+//        Gson gson = new Gson();
+//        JsonReader reader = new JsonReader(new FileReader(filename));
+
+        ReakcjaModel rm = mapper.readValue(new File(filename), ReakcjaModel.class);
+        result.add(rm);
+
+        return result;
     }
 
     private List<String> podzielReakcje(String nowaReakcja) {

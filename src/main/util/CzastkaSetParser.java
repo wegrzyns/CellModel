@@ -1,4 +1,4 @@
-package controller;
+package util;
 
 import enums.CzastkaEnum;
 
@@ -7,7 +7,7 @@ import enums.CzastkaEnum;
  * 22:14
  * Project: MiSS.
  */
-public class NowaCzastkaController {
+public class CzastkaSetParser {
 
     private CzastkaEnum nowaCzastka;
 

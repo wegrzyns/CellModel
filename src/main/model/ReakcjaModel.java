@@ -15,6 +15,9 @@ public class ReakcjaModel {
     private Map<CzastkaEnum, Integer> lewaStrona;
     private Map<CzastkaEnum, Integer> prawaStrona;
 
+    public ReakcjaModel() {
+    }
+
     public ReakcjaModel(String nazwa, Map<CzastkaEnum, Integer> lewaStrona, Map<CzastkaEnum, Integer> prawaStrona) {
         this.nazwa = nazwa;
         this.lewaStrona = lewaStrona;
@@ -43,5 +46,14 @@ public class ReakcjaModel {
 
     public void setPrawaStrona(Map<CzastkaEnum, Integer> prawaStrona) {
         this.prawaStrona = prawaStrona;
+    }
+
+    @Override
+    public String toString() {
+        return "ReakcjaModel{" +
+                "nazwa='" + nazwa + '\'' +
+                ", lewaStrona=" + lewaStrona +
+                ", prawaStrona=" + prawaStrona +
+                '}';
     }
 }

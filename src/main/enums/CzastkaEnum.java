@@ -16,6 +16,7 @@ public enum CzastkaEnum {
 
     @Override
     public String toString() {
-        return super.toString().substring(0, 1).toUpperCase() + super.toString().substring(1).toLowerCase();
+//        return super.toString().substring(0, 1).toUpperCase() + super.toString().substring(1).toLowerCase();
+        return super.toString().toUpperCase();
     }
 }

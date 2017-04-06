@@ -1,12 +1,14 @@
 package logic;
 
-import controller.NowaReakcjaController;
+import model.ReakcjaModel;
+import util.ReakcjaSetParser;
 import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -32,12 +34,23 @@ public class Silnik {
         Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, komorka);
         izomeryzacja.reaguj();
 
-        NowaReakcjaController n = new NowaReakcjaController();
+        ReakcjaSetParser n = new ReakcjaSetParser();
+
         try {
             n.dodajNowaReakcja("zajebista rekacja", "3_Woda + 2_Akonitan -> 5_Woda + 1_Cytrynian");
+            n.dodajNowaReakcja("ok", "2_Woda + 5_Akonitan -> 4_Woda + 3_Akonitan");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        ReakcjaSetParser rsp = new ReakcjaSetParser();
+        try {
+            List<ReakcjaModel> r = rsp.pobierzReakcje();
+            r.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static Komorka prepareCell() {
