@@ -1,7 +1,12 @@
 package logic;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import injector.AppInjector;
+import logic.reaction.IReakcja;
+import logic.reaction.Reakcja;
 import model.ReakcjaModel;
-import util.ReakcjaSetParser;
+import util.ReakcjaRepositoryParser;
 import decorators.CellResourceMap;
 import enums.CzastkaEnum;
 
@@ -25,16 +30,18 @@ public class Silnik {
 
     public static void main(String[] args) throws InterruptedException {
 
+        Injector injector = Guice.createInjector(new AppInjector());
+
         configureLogging();
 
         HashMap<CellResourceMap, CellResourceMap> reakcjaIzomeryzacji = prepareIzomerationReaction();
 
         Komorka komorka = prepareCell();
 
-        Reakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, komorka);
+        IReakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, komorka);
         izomeryzacja.reaguj();
 
-        ReakcjaSetParser rsp = new ReakcjaSetParser();
+        ReakcjaRepositoryParser rsp = new ReakcjaRepositoryParser();
         try {
             rsp.dodajNowaReakcja("ok", "2_Woda + 5_Akonitan -> 4_Woda + 3_Akonitan");
             List<ReakcjaModel> r = rsp.pobierzReakcje();

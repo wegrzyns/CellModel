@@ -1,6 +1,7 @@
 package util;
 
 import enums.CzastkaEnum;
+import enums.RegexRepository;
 import model.ReakcjaModel;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -14,9 +15,9 @@ import java.util.regex.Pattern;
  * 22:15
  * Project: MiSS.
  */
-public class ReakcjaSetParser {
+public class ReakcjaRepositoryParser implements IReakcjaRepositoryParser {
 
-    private String pattern = "->";
+    private String pattern = RegexRepository.REACTIONRESULT.toString();
 
 
     public boolean dodajNowaReakcja(String nazwa, String wzorNowejReakcji) throws IOException {
@@ -58,8 +59,8 @@ public class ReakcjaSetParser {
 
         Map<CzastkaEnum, Integer> stronaReakcji = new LinkedHashMap<>();
 
-        String elementPatternString = "\\w+(\\d*)";
-        String iloscRodzajRozdzielPatternString = "_";
+        String elementPatternString = RegexRepository.ELEMENT.toString();
+        String iloscRodzajRozdzielPatternString = RegexRepository.ILOSCRODZAJROZDZIEL.toString();
         Pattern elementPattern = Pattern.compile(elementPatternString);
         Matcher czescReakcjiMatcher = elementPattern.matcher(czescReakcji);
 

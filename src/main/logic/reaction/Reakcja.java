@@ -1,7 +1,11 @@
-package logic;
+package logic.reaction;
 
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 import decorators.CellResourceMap;
 import enums.CzastkaEnum;
+import logic.Komorka;
+import logic.Silnik;
 
 import java.util.Map;
 import java.util.logging.Logger;
@@ -9,17 +13,13 @@ import java.util.logging.Logger;
 /**
  * Created by Krzysiu on 27.03.2017.
  */
-public class Reakcja {
 
-    private static Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
+public class Reakcja implements IReakcja {
+
+    private Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
     private String nazwa;
     private Map<CellResourceMap, CellResourceMap> reactionMapping;
     private Komorka komorka;
-
-    public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping) {
-        this.nazwa = nazwa;
-        this.reactionMapping = reactionMapping;
-    }
 
     public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping, Komorka komorka) {
         this.nazwa = nazwa;
@@ -89,4 +89,5 @@ public class Reakcja {
                 produkty.toReactionString();
         return reactionLog;
     }
+
 }

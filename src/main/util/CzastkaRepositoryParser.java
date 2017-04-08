@@ -7,7 +7,7 @@ import enums.CzastkaEnum;
  * 22:14
  * Project: MiSS.
  */
-public class CzastkaSetParser {
+public class CzastkaRepositoryParser implements ICzastkaRepositoryParser {
 
     private CzastkaEnum nowaCzastka;
 
