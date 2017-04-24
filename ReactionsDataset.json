@@ -1,0 +1,5 @@
+[
+  {"nazwa":"IZOMELA","lewaStrona":{"WODA":2,"AKONITAN":5},"prawaStrona":{"WODA":4,"AKONITAN":3}},
+  {"nazwa":"DUPOMELA","lewaStrona":{"WODA":1,"AKONITAN":0},"prawaStrona":{"WODA":1,"AKONITAN":0}},
+  {"nazwa":"KITRANIE","lewaStrona":{"WODA":7,"AKONITAN":2},"prawaStrona":{"WODA":0,"AKONITAN":3}}
+]
