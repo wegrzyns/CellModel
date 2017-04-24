@@ -5,7 +5,7 @@ package enums;
  * 12:46
  * Project: MiSS.
  */
-public enum CzastkaEnum {
+public enum ParticleType {
 
     CYTRYNIAN,
     IZOCYTRYNIAN,

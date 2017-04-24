@@ -1,6 +1,6 @@
 package util;
 
-import enums.CzastkaEnum;
+import enums.ParticleType;
 import enums.RegexRepository;
 import model.ReakcjaModel;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -26,8 +26,8 @@ public class ReakcjaRepositoryParser implements IReakcjaRepositoryParser {
 
         try(Writer writer = new FileWriter("Output.json")) {
 
-            Map<CzastkaEnum, Integer> lewaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(0));
-            Map<CzastkaEnum, Integer> prawaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(1));
+            Map<ParticleType, Integer> lewaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(0));
+            Map<ParticleType, Integer> prawaStronaReakcji = parseCzescRekacji(reakcjaPodzielona.get(1));
 
             ReakcjaModel nowaReakcja = new ReakcjaModel(nazwa, lewaStronaReakcji, prawaStronaReakcji);
             mapper.writeValue(writer, nowaReakcja);
@@ -55,9 +55,9 @@ public class ReakcjaRepositoryParser implements IReakcjaRepositoryParser {
         return Arrays.asList(nowaReakcja.split(pattern));
     }
 
-    private Map<CzastkaEnum, Integer> parseCzescRekacji(String czescReakcji) {
+    private Map<ParticleType, Integer> parseCzescRekacji(String czescReakcji) {
 
-        Map<CzastkaEnum, Integer> stronaReakcji = new LinkedHashMap<>();
+        Map<ParticleType, Integer> stronaReakcji = new LinkedHashMap<>();
 
         String elementPatternString = RegexRepository.ELEMENT.toString();
         String iloscRodzajRozdzielPatternString = RegexRepository.ILOSCRODZAJROZDZIEL.toString();
@@ -70,7 +70,7 @@ public class ReakcjaRepositoryParser implements IReakcjaRepositoryParser {
                 String[] elementRozdzielony = element.split(iloscRodzajRozdzielPatternString);
                 String rodzaj = elementRozdzielony[1];
                 int ilosc = Integer.parseInt(elementRozdzielony[0]);
-                CzastkaEnum czastka = CzastkaEnum.valueOf(rodzaj.toUpperCase());
+                ParticleType czastka = ParticleType.valueOf(rodzaj.toUpperCase());
                 if(czastka != null)
                     stronaReakcji.put(czastka, ilosc);
             }

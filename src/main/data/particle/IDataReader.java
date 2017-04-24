@@ -1,6 +1,6 @@
 package data.particle;
 
-import logic.Czastka;
+import logic.Particle;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ import java.util.List;
  */
 public interface IDataReader {
 
-    List<Czastka> getParticles();
+    List<Particle> getParticles();
 
-    void replaceParticle(Czastka c1, Czastka c2);
+    void replaceParticle(Particle c1, Particle c2);
 
-    void removeParticle(Czastka c);
+    void removeParticle(Particle c);
 
-    void addParticle(Czastka c);
+    void addParticle(Particle c);
 
 }

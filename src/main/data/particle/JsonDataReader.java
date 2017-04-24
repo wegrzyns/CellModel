@@ -1,6 +1,6 @@
 package data.particle;
 
-import logic.Czastka;
+import logic.Particle;
 
 import java.util.List;
 
@@ -11,22 +11,22 @@ import java.util.List;
  */
 public class JsonDataReader implements IDataReader {
     @Override
-    public List<Czastka> getParticles() {
+    public List<Particle> getParticles() {
         return null;
     }
 
     @Override
-    public void replaceParticle(Czastka c1, Czastka c2) {
+    public void replaceParticle(Particle c1, Particle c2) {
 
     }
 
     @Override
-    public void removeParticle(Czastka c) {
+    public void removeParticle(Particle c) {
 
     }
 
     @Override
-    public void addParticle(Czastka c) {
+    public void addParticle(Particle c) {
 
     }
 }

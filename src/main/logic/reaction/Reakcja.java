@@ -1,12 +1,11 @@
 package logic.reaction;
 
-import com.google.inject.Inject;
-import com.google.inject.assistedinject.Assisted;
-import decorators.CellResourceMap;
-import enums.CzastkaEnum;
-import logic.Komorka;
-import logic.Silnik;
+import enums.ParticleType;
+import logic.Cell;
+import logic.Engine;
+import logic.ResourcesPool;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -16,19 +15,19 @@ import java.util.logging.Logger;
 
 public class Reakcja implements IReakcja {
 
-    private Logger logger = Logger.getLogger(Silnik.REACTION_LOGGER_NAME);
+    private Logger logger = Logger.getLogger(Engine.REACTION_LOGGER_NAME);
     private String nazwa;
-    private Map<CellResourceMap, CellResourceMap> reactionMapping;
-    private Komorka komorka;
+    private Map<ResourcesPool, ResourcesPool> reactionMapping;
+    private Cell cell;
 
-    public Reakcja(String nazwa, Map<CellResourceMap, CellResourceMap> reactionMapping, Komorka komorka) {
+    public Reakcja(String nazwa, HashMap<ResourcesPool, ResourcesPool> reactionMapping, Cell cell) {
         this.nazwa = nazwa;
         this.reactionMapping = reactionMapping;
-        this.komorka = komorka;
+        this.cell = cell;
     }
 
     public void reaguj() {
-        for(Map.Entry<CellResourceMap, CellResourceMap> reaction: reactionMapping.entrySet() ) {
+        for(Map.Entry<ResourcesPool, ResourcesPool> reaction: reactionMapping.entrySet() ) {
             if( pobierzCzastkiDoReakcji(reaction.getKey()) ) {
                 dodajCzastkiPoReakcji(reaction.getValue());
 
@@ -44,49 +43,44 @@ public class Reakcja implements IReakcja {
         }
     }
 
-    private boolean pobierzCzastkiDoReakcji(CellResourceMap wymaganeCzastki) {
+    private boolean pobierzCzastkiDoReakcji(ResourcesPool wymaganeCzastki) {
         if (!contains(wymaganeCzastki))
             return false;
-        for (CzastkaEnum czastka : wymaganeCzastki.keySet()) {
-            int iloscCzastekwKomorce = komorka.getMapaCzastek().get(czastka);
-            int iloscCzastekDoUsuniecia = wymaganeCzastki.get(czastka);
-            int iloscCzastek = iloscCzastekwKomorce - iloscCzastekDoUsuniecia;
-            komorka.getMapaCzastek().put(czastka, iloscCzastek);
+        for (ParticleType czastka : wymaganeCzastki.getAvailableParticleTypes()) {
+            int iloscCzastekDoUsuniecia = wymaganeCzastki.getSizeOfParticleType(czastka);
+            cell.getResoucersPool().removeElementsOfParticleType(czastka, iloscCzastekDoUsuniecia);
         }
 
         return true;
     }
 
-    private void dodajCzastkiPoReakcji(CellResourceMap dodawaneCzastki) {
+    private void dodajCzastkiPoReakcji(ResourcesPool dodawaneCzastki) {
 
-        for (CzastkaEnum czastka : dodawaneCzastki.keySet()) {
-            if (komorka.getMapaCzastek().containsKey(czastka)) {
-                synchronized (komorka.getMapaCzastek()) {
-                    int aktualnaIlosc = komorka.getMapaCzastek().get(czastka);
-                    int nowaIlosc = aktualnaIlosc + dodawaneCzastki.get(czastka);
-                    komorka.getMapaCzastek().put(czastka, nowaIlosc);
-                }
-            } else {
-                komorka.getMapaCzastek().put(czastka, dodawaneCzastki.get(czastka));
+        for (ParticleType czastka : dodawaneCzastki.getAvailableParticleTypes()) {
+            if (!cell.getResoucersPool().containsParticleType(czastka)) {
+                cell.getResoucersPool().addParticleType(czastka);
             }
+            cell.getResoucersPool()
+                    .addElementsOfParticleType(czastka, dodawaneCzastki.getElementsOfParticleType(czastka));
         }
 
     }
 
-    private boolean contains(CellResourceMap wymaganeCzastki) {
-        for (CzastkaEnum czastka : wymaganeCzastki.keySet()) {
-            if(!komorka.getMapaCzastek().containsKey(czastka)) return false;
-            if(komorka.getMapaCzastek().get(czastka) < wymaganeCzastki.get(czastka)) return false;
+    private boolean contains(ResourcesPool wymaganeCzastki) {
+        for (ParticleType czastka : wymaganeCzastki.getResources().keySet()) {
+            if(!cell.getResoucersPool().getResources().containsKey(czastka)) return false;
+            if(cell.getResoucersPool().getResources().get(czastka).size()
+                    < wymaganeCzastki.getResources().get(czastka).size()) return false;
         }
         return true;
     }
 
-    private String createReactionLog(CellResourceMap substraty, CellResourceMap produkty) {
+    private String createReactionLog(ResourcesPool substraty, ResourcesPool produkty) {
         String reactionLog = nazwa +
                 ": " +
-                substraty.toReactionString() +
+                substraty +
                 " -> " +
-                produkty.toReactionString();
+                produkty;
         return reactionLog;
     }
 

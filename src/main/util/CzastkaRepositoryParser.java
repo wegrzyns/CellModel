@@ -1,6 +1,6 @@
 package util;
 
-import enums.CzastkaEnum;
+import enums.ParticleType;
 
 /**
  * Created by Maciej on 03.04.2017.
@@ -9,6 +9,6 @@ import enums.CzastkaEnum;
  */
 public class CzastkaRepositoryParser implements ICzastkaRepositoryParser {
 
-    private CzastkaEnum nowaCzastka;
+    private ParticleType nowaCzastka;
 
 }

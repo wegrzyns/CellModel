@@ -1,7 +1,7 @@
 package data.particle;
 
 import data.particle.classdata.ObjectDatabase;
-import logic.Czastka;
+import logic.Particle;
 
 import java.util.List;
 
@@ -18,23 +18,23 @@ public class ObjectDataReader implements IDataReader {
     }
 
     @Override
-    public List<Czastka> getParticles() {
-        return od.getCzastkaList();
+    public List<Particle> getParticles() {
+        return od.getParticleList();
     }
 
     @Override
-    public void replaceParticle(Czastka c1, Czastka c2) {
+    public void replaceParticle(Particle c1, Particle c2) {
         removeParticle(c1);
         addParticle(c2);
     }
 
     @Override
-    public void removeParticle(Czastka c) {
-        od.getCzastkaList().remove(c);
+    public void removeParticle(Particle c) {
+        od.getParticleList().remove(c);
     }
 
     @Override
-    public void addParticle(Czastka c) {
-        od.getCzastkaList().add(c);
+    public void addParticle(Particle c) {
+        od.getParticleList().add(c);
     }
 }

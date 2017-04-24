@@ -1,6 +1,6 @@
 package model;
 
-import enums.CzastkaEnum;
+import enums.ParticleType;
 
 import java.util.Map;
 
@@ -12,13 +12,13 @@ import java.util.Map;
 public class ReakcjaModel {
 
     private String nazwa;
-    private Map<CzastkaEnum, Integer> lewaStrona;
-    private Map<CzastkaEnum, Integer> prawaStrona;
+    private Map<ParticleType, Integer> lewaStrona;
+    private Map<ParticleType, Integer> prawaStrona;
 
     public ReakcjaModel() {
     }
 
-    public ReakcjaModel(String nazwa, Map<CzastkaEnum, Integer> lewaStrona, Map<CzastkaEnum, Integer> prawaStrona) {
+    public ReakcjaModel(String nazwa, Map<ParticleType, Integer> lewaStrona, Map<ParticleType, Integer> prawaStrona) {
         this.nazwa = nazwa;
         this.lewaStrona = lewaStrona;
         this.prawaStrona = prawaStrona;
@@ -32,19 +32,19 @@ public class ReakcjaModel {
         this.nazwa = nazwa;
     }
 
-    public Map<CzastkaEnum, Integer> getLewaStrona() {
+    public Map<ParticleType, Integer> getLewaStrona() {
         return lewaStrona;
     }
 
-    public void setLewaStrona(Map<CzastkaEnum, Integer> lewaStrona) {
+    public void setLewaStrona(Map<ParticleType, Integer> lewaStrona) {
         this.lewaStrona = lewaStrona;
     }
 
-    public Map<CzastkaEnum, Integer> getPrawaStrona() {
+    public Map<ParticleType, Integer> getPrawaStrona() {
         return prawaStrona;
     }
 
-    public void setPrawaStrona(Map<CzastkaEnum, Integer> prawaStrona) {
+    public void setPrawaStrona(Map<ParticleType, Integer> prawaStrona) {
         this.prawaStrona = prawaStrona;
     }
 
