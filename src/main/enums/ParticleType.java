@@ -7,8 +7,8 @@ package enums;
  */
 public enum ParticleType {
 
-    CYTRYNIAN,
-    IZOCYTRYNIAN,
+    Citrate,
+    Isocitrate,
     AKONITAN,
     AKONITAZA,
     WODA;

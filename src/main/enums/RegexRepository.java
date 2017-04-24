@@ -9,7 +9,7 @@ public enum RegexRepository {
 
     REACTIONRESULT ("->"),
     ELEMENT ("\\w+(\\d*)"),
-    ILOSCRODZAJROZDZIEL ("_");
+    AMOUNTTYPESPLIT("_");
 
 
     String regex;

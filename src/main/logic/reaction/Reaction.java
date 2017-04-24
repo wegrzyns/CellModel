@@ -13,14 +13,14 @@ import java.util.logging.Logger;
  * Created by Krzysiu on 27.03.2017.
  */
 
-public class Reakcja implements IReakcja {
+public class Reaction implements IReaction {
 
     private Logger logger = Logger.getLogger(Engine.REACTION_LOGGER_NAME);
     private String nazwa;
     private Map<ResourcesPool, ResourcesPool> reactionMapping;
     private Cell cell;
 
-    public Reakcja(String nazwa, HashMap<ResourcesPool, ResourcesPool> reactionMapping, Cell cell) {
+    public Reaction(String nazwa, HashMap<ResourcesPool, ResourcesPool> reactionMapping, Cell cell) {
         this.nazwa = nazwa;
         this.reactionMapping = reactionMapping;
         this.cell = cell;

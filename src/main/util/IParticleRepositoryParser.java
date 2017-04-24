@@ -5,6 +5,6 @@ package util;
  * 01:45
  * Project: MiSS.
  */
-public interface ICzastkaRepositoryParser {
+public interface IParticleRepositoryParser {
 
 }

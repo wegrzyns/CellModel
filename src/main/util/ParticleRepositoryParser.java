@@ -7,7 +7,7 @@ import enums.ParticleType;
  * 22:14
  * Project: MiSS.
  */
-public class CzastkaRepositoryParser implements ICzastkaRepositoryParser {
+public class ParticleRepositoryParser implements IParticleRepositoryParser {
 
     private ParticleType nowaCzastka;
 

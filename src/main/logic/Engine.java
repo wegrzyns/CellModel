@@ -4,10 +4,10 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import data.particle.ObjectDataReader;
 import injector.AppInjector;
-import logic.reaction.IReakcja;
-import logic.reaction.Reakcja;
-import model.ReakcjaModel;
-import util.ReakcjaRepositoryParser;
+import logic.reaction.IReaction;
+import logic.reaction.Reaction;
+import model.ReactionModel;
+import util.ReactionRepositoryParser;
 import enums.ParticleType;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ import java.util.logging.SimpleFormatter;
  */
 public class Engine {
 
-    private static final String IZOMERYZACJA = "izomeryzacja";
+    private static final String ISOMERIZATION = "isomerization";
     private static final String LOG_FILE_NAME = "reaction_logs.log";
     public static final String REACTION_LOGGER_NAME = "MyLog";
 
@@ -35,17 +35,17 @@ public class Engine {
 
         configureLogging();
 
-        HashMap<ResourcesPool, ResourcesPool> reakcjaIzomeryzacji = prepareIzomerationReaction();
+        HashMap<ResourcesPool, ResourcesPool> reakcjaIzomeryzacji = prepareIsomerationReaction();
 
         Cell cell = prepareCell();
 
-        IReakcja izomeryzacja = new Reakcja(IZOMERYZACJA, reakcjaIzomeryzacji, cell);
+        IReaction izomeryzacja = new Reaction(ISOMERIZATION, reakcjaIzomeryzacji, cell);
         izomeryzacja.reaguj();
 
-        ReakcjaRepositoryParser rsp = new ReakcjaRepositoryParser();
+        ReactionRepositoryParser rsp = new ReactionRepositoryParser();
         try {
-            rsp.dodajNowaReakcja("ok", "2_Woda + 5_Akonitan -> 4_Woda + 3_Akonitan");
-            List<ReakcjaModel> r = rsp.pobierzReakcje();
+            rsp.addNewReaction("ok", "2_WODA + 5_AKONITAN -> 4_WODA + 3_AKONITAN");
+            List<ReactionModel> r = rsp.getReaction();
             r.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class Engine {
 
     }
 
-    private static HashMap<ResourcesPool, ResourcesPool> prepareIzomerationReaction() {
+    private static HashMap<ResourcesPool, ResourcesPool> prepareIsomerationReaction() {
         HashMap<ResourcesPool, ResourcesPool> reakcjaIzomeryzacji = new LinkedHashMap<>();
         ResourcesPool substraty1 = new ResourcesPool(new HashMap<>());
         ResourcesPool produkty1 = new ResourcesPool(new HashMap<>());
@@ -68,10 +68,10 @@ public class Engine {
         ResourcesPool produkty2 = new ResourcesPool(new HashMap<>());
 
         List<Particle>  particleStubList = new ArrayList<>();
-        particleStubList.add(new Particle(ParticleType.CYTRYNIAN, null));
+        particleStubList.add(new Particle(ParticleType.Citrate, null));
 
 
-        substraty1.getResources().put(ParticleType.CYTRYNIAN, generateSimpleReactionParticleList(ParticleType.CYTRYNIAN));
+        substraty1.getResources().put(ParticleType.Citrate, generateSimpleReactionParticleList(ParticleType.Citrate));
         produkty1.getResources().put(ParticleType.AKONITAN, generateSimpleReactionParticleList(ParticleType.AKONITAN));
         produkty1.getResources().put(ParticleType.WODA, generateSimpleReactionParticleList(ParticleType.WODA));
 
@@ -79,7 +79,7 @@ public class Engine {
 
         substraty2.getResources().put(ParticleType.AKONITAN, generateSimpleReactionParticleList(ParticleType.AKONITAN));
         substraty2.getResources().put(ParticleType.WODA, generateSimpleReactionParticleList(ParticleType.WODA));
-        produkty2.getResources().put(ParticleType.IZOCYTRYNIAN, generateSimpleReactionParticleList(ParticleType.IZOCYTRYNIAN));
+        produkty2.getResources().put(ParticleType.Isocitrate, generateSimpleReactionParticleList(ParticleType.Isocitrate));
 
         reakcjaIzomeryzacji.put(substraty2, produkty2);
 

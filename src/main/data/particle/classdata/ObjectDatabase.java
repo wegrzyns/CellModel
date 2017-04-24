@@ -33,7 +33,7 @@ public class ObjectDatabase {
         particleList.add(new Particle(ParticleType.AKONITAN, new Location(new Point2D(0,0))));
         particleList.add(new Particle(ParticleType.AKONITAN, new Location(new Point2D(0,1))));
         particleList.add(new Particle(ParticleType.AKONITAN, new Location(new Point2D(1,1))));
-        particleList.add(new Particle(ParticleType.CYTRYNIAN, new Location(new Point2D(1,0))));
+        particleList.add(new Particle(ParticleType.Citrate, new Location(new Point2D(1,0))));
     }
 
 }

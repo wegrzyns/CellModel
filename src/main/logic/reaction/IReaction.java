@@ -5,7 +5,7 @@ package logic.reaction;
  * 21:22
  * Project: MiSS.
  */
-public interface IReakcja {
+public interface IReaction {
 
     void reaguj();
 
