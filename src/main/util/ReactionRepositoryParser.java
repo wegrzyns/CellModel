@@ -24,7 +24,7 @@ public class ReactionRepositoryParser implements IReactionRepositoryParser {
         ObjectMapper mapper = new ObjectMapper();
         List<String> splitReaction = splitReaction(newReactionFormula);
 
-        try(Writer writer = new FileWriter("Output.json")) {
+        try(Writer writer = new FileWriter("ReactionsDataset.json")) {
 
             Map<ParticleType, Integer> leftReactionSide = parseReactionPart(splitReaction.get(0));
             Map<ParticleType, Integer> rightReactionSide = parseReactionPart(splitReaction.get(1));
@@ -43,7 +43,7 @@ public class ReactionRepositoryParser implements IReactionRepositoryParser {
     public List<ReactionModel> getReaction() throws IOException {
         List<ReactionModel> result = new LinkedList<>();
         ObjectMapper mapper = new ObjectMapper();
-        String filename = "Output.json";
+        String filename = "ReactionsDataset.json";
 
         ReactionModel rm = mapper.readValue(new File(filename), ReactionModel.class);
         result.add(rm);

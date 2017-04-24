@@ -2,7 +2,7 @@ package data.reaction;
 
 import data.reaction.classdata.JsonDatabase;
 import logic.ResourcesPool;
-import model.ReakcjaModel;
+import model.ReactionModel;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.File;
@@ -21,7 +21,7 @@ public class JsonReactionReader implements IReactionReader {
     private JsonDatabase database = new JsonDatabase();
 
     @Override
-    public List<ReakcjaModel> getReactions() throws IOException {
+    public List<ReactionModel> getReactions() throws IOException {
         return database.getReactions();
     }
 }

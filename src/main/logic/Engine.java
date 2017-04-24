@@ -3,6 +3,8 @@ package logic;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import data.particle.ObjectDataReader;
+import data.reaction.IReactionReader;
+import data.reaction.JsonReactionReader;
 import injector.AppInjector;
 import logic.reaction.IReaction;
 import logic.reaction.Reaction;
@@ -42,10 +44,9 @@ public class Engine {
         IReaction izomeryzacja = new Reaction(ISOMERIZATION, reakcjaIzomeryzacji, cell);
         izomeryzacja.reaguj();
 
-        ReactionRepositoryParser rsp = new ReactionRepositoryParser();
+        IReactionReader reactionReader = new JsonReactionReader();
         try {
-            rsp.addNewReaction("ok", "2_WODA + 5_AKONITAN -> 4_WODA + 3_AKONITAN");
-            List<ReactionModel> r = rsp.getReaction();
+            List<ReactionModel> r = reactionReader.getReactions();
             r.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();

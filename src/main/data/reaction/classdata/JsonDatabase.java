@@ -1,6 +1,6 @@
 package data.reaction.classdata;
 
-import model.ReakcjaModel;
+import model.ReactionModel;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
@@ -19,11 +19,11 @@ public class JsonDatabase {
 
     private String databasePath = "ReactionsDataset.json";
 
-    public List<ReakcjaModel> getReactions() throws IOException {
-        List<ReakcjaModel> result = new LinkedList<>();
+    public List<ReactionModel> getReactions() throws IOException {
+        List<ReactionModel> result = new LinkedList<>();
         ObjectMapper mapper = new ObjectMapper();
 
-        ReakcjaModel[] rm = mapper.readValue(new File(databasePath), ReakcjaModel[].class);
+        ReactionModel[] rm = mapper.readValue(new File(databasePath), ReactionModel[].class);
         Collections.addAll(result, rm);
 
         return result;

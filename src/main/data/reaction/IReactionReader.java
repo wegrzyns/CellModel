@@ -1,7 +1,7 @@
 package data.reaction;
 
 import logic.ResourcesPool;
-import model.ReakcjaModel;
+import model.ReactionModel;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +14,6 @@ import java.util.Map;
  */
 public interface IReactionReader {
 
-    List<ReakcjaModel> getReactions() throws IOException;
+    List<ReactionModel> getReactions() throws IOException;
 
 }
