@@ -1,8 +1,9 @@
-## Welcome to GitHub Pages
+## Welcome to the CellModel project page
 
-You can use the [editor on GitHub](https://github.com/wegrzyns/CellModel/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+We are a group of students who attend the "Modeling and the Simulation of Systems" classes on the AGH University of Science and Technology. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Our team is involved in a project related with the simulation of the Prokaryotic cell.  This page helps us and people interested in this topic to organize acquired knowledge in the researched domain. 
+All the descriptions, of the arising application should be available here both with explanations and images.
 
 ### Markdown
 
@@ -28,10 +29,6 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wegrzyns/CellModel/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with application or the knowledge on this page? Check out our [wiki](https://help.github.com/categories/github-pages-basics/) or [contact team](mailto: makowka@student.agh.edu.pl) and we’ll help you sort it out.
