@@ -1,11 +1,13 @@
-## Welcome to the CellModel project page
+## Witamy na stronie projektu CellModel
 
-We are a group of students who attend the "Modeling and the Simulation of Systems" classes on the AGH University of Science and Technology. 
+Jesteśmy grupą studenów która uczęszcza na zajęcia z  "Modelowania i Symulacji systemów" na Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. 
 
-Our team is involved in a project related with the simulation of the Prokaryotic cell.  This page helps us and people interested in this topic to organize acquired knowledge in the researched domain. 
-All the descriptions, of the arising application should be available here both with explanations and images.
+Nasz zespół pracuję nad projektem związanym z symulacją komórki priokariotycznej. Ta strona ma za zadanie pomóc nam oraz innym zainteresowanym tym tematem po przez ogranizacje zdobytej wiedzy.
+Wszystkie opisy związane z powstającą aplikacją powinny byt tu dostępne, wraz z wyjaśnieniami oraz ilustracjami.
 
-### Markdown
+## [Teoria, na podstawie które tworzona jest aplikacja](theory)
+
+## [Budowa aplikacji oraz rozwiązania techniczne](technical_details)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 

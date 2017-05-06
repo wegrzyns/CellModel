@@ -1,1 +1,4 @@
 theme: jekyll-theme-architect
+highlighter: rouge
+encoding: utf-8
+repository: wegrzyns/CellModel.github.io

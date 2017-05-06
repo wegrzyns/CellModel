@@ -1,0 +1,1 @@
+## Detale techniczne
