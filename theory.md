@@ -10,6 +10,25 @@ Symulacja przy pomocy automatu jest również łatwiejsza w implementacji, i mo�
 Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie wierniej symulacji komórki może być wielokrotnie bardziej skomplikowane od takich przedsięwzięć jak załogowa podróż na marsa.
 
 
+## Cele projektu
+
+1. Stworzenie modelu który dobrze odwzorowuje rzeczywistość
+2. Próba informatyzacji danych o komórce, zasad jej działania
+3. Modelujemy fragment ale chcemy, aby był on użyteczny
+4. Odkrycie mechanizmu informatycznego lub wskazówek mogących pomóc w jego odnalezieniu
+5. Utworzenie konfigurowalnego modelu
+
+## Istniejące aplikacje do modelowania komórki
+
+Zagadnieniem modelowania komórki zajmuje się wiele zespołów naukowców na całym świecie.
+W trakcie trwania zajęć zostały nam wymieniony dwa takie projekty czy też aplikacje, są to:
+
+1. CHARMM<sup>[[1]](#ref1)</sup>
+2. GROMACS<sup>[[2]](#ref2)</sup>
+
+
+Systemy te są oparte na symalcji fizycznych zjawisk, zachodzących w komórce i są według wiedzy ekspertów przedstawionej w czasie trwania zajęć - mało dokładne.
+
 ## Rodzaje komórek
 
 ### Prokariotyczna
@@ -19,8 +38,8 @@ Mniej skomplikowany rodzaj komórki, nie posiadający jądra komórkowego oraz o
 Jest to rodzaj komórki który będzie modelowany, a konkretnie będzie to pałeczka okrężnicy(w skrócie z ang. E. coli).
 Wybór ten uzasadniamy ogromną wiedzą zdobytą na temat tej komórki, co jest dostępne w różnego rodzaju zbiorach danych.
 
-Ilustracja 1<sup>[1]</sup> - Struktura komórki prokariotycznej
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Prokaryote_cell_diagram_international.svg">
+Ilustracja 1<sup>[[3]](#ref3)</sup> - Struktura komórki prokariotycznej
+![ProkaryoticCellSchema](https://upload.wikimedia.org/wikipedia/commons/e/e4/Prokaryote_cell_diagram_international.svg "ProkaryoticCell")
 
 Legenda:
 1. kapsuła
@@ -33,19 +52,82 @@ Legenda:
 8. wić
 
 
-
 ### Eukariotyczna
 
 Bardziej skomplikowany typ komórki. Komórki tego rodzaju tworzą organizmy wielokomórkowe, czyli między innymi ludzi.
 Zespół nie będzie zajmował się symulacją tego typu komórki ze względu na ograniczenia czasowe oraz poziom jej skomplikowania.
 
 
-## next
+## Powielanie komórkowe
+
+Ze względu na modelowanie jedynie fragmentu komórki, zespół nie będzie zajmował się zagadnieniem powielania komórkowego.
+Synchronizacja powielania komórkowego jest trudnym zagadnieniem.
+
+
+## Metabolizm bakterii
+
+### Systemy
+
+#### Dynamiczne
+
+Kilka elementów.
+
+#### Termodynamiczne
+
+Wiele elementów, jeden rodzaj interakcji.
+
+#### Biologiczne
+
+Zbiór różnych elementów, hierarchiczny, bogaty zbiór interakcji.
+
+#### Równania Maxwella
+
+#### Linear flux-force relationship
+
+#### Phosphorylation potential
+
+#### Free energy of ATP hydrolysis
+
+Zmiany ATP, ADP i P<sub>i</sub> są różna dla różnych warunków.
+
+### Podsumowanie
+
+Nie ma drogi na skróty, wiele znanych rozwiązań okazuje się nieskutecznych, trzeba tworzyć skomplikowane modele aby uzyskać dużą dokładność.
+
+
+### Schemat systemu do którego zespół dąży
+
+TODO porzadna ilustracja
+
+Ilustracja 2 - schemat systemu odpowiadającego za metabolizm(?) przedstawiony przez Prof. Bernarda Korzeniowskiego
+![SystemSchematic](/StubSystemSchematic.jpg "SystemSchematic")
+
+Objaśnienia:
+- przepływy/szybkości reakcji określane przez symbol V np. V<sub>1</sub>
+- stężenie metabolitów określane przez [X]
+- kinetyki poszczególnych reakcji np. V<sub>3</sub>=f(X<sub>i</sub>,...,A<sub>j</sub>)
+
+
+## Zaproponowana interaktywna metoda budowy modelu:
+
+- zbierz dane o konkretnych częściach systemu
+- wystosuj założenia i przybliżenia
+- stworzenie modelu na komputere(tymczasowy)
+- wielokrotne testy(z dostępnych źródeł)
+- w razie potrzeby modyfikacja modelu
+
+
+
+
 
 
 ## Referencje
-  
-<small>[1] - https://pl.wikipedia.org/wiki/Kom%C3%B3rka_prokariotyczna#/media/File:Prokaryote_cell_diagram_international.svg</small>
+
+<small><a name="ref1">[1]</a> - https://www.charmm.org/charmm/?CFID=068e59f1-2efe-4c72-b565-749e2ef55079&CFTOKEN=0</small>
+<br>
+<small><a name="ref2">[2]</a> - http://www.gromacs.org/</small>
+<br>
+<small><a name="ref3">[3]</a> - https://pl.wikipedia.org/wiki/Kom%C3%B3rka_prokariotyczna#/media/File:Prokaryote_cell_diagram_international.svg</small>
 
 
 
