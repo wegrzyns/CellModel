@@ -100,7 +100,7 @@ Nie ma drogi na skróty, wiele znanych rozwiązań okazuje się nieskutecznych, 
 TODO porzadna ilustracja
 
 Ilustracja 2 - schemat systemu odpowiadającego za metabolizm(?) przedstawiony przez Prof. Bernarda Korzeniowskiego
-![SystemSchematic](/StubSystemSchematic.jpg "SystemSchematic")
+![SystemSchematic](StubSystemSchematic.jpg "SystemSchematic")
 
 Objaśnienia:
 - przepływy/szybkości reakcji określane przez symbol V np. V<sub>1</sub>
