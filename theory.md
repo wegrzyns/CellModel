@@ -1,4 +1,4 @@
-[Powrót do strony głównej](/)
+[Powrót do strony głównej](index)
 # Teoria
 
 ## Wstęp
