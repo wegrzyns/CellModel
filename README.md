@@ -1,36 +1,42 @@
 ## Witamy na stronie projektu CellModel
 
-Jesteśmy grupą studenów która uczęszcza na zajęcia z  "Modelowania i Symulacji systemów" na Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. 
+Jesteśmy grupą studentów która uczęszcza na zajęcia z  "Modelowania i Symulacji systemów" na Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. 
 
-Nasz zespół pracuję nad projektem związanym z symulacją komórki priokariotycznej. Ta strona ma za zadanie pomóc nam oraz innym zainteresowanym tym tematem po przez ogranizacje zdobytej wiedzy.
+Nasz zespół pracuję nad projektem związanym z symulacją komórki prokariotycznej. Ta strona ma za zadanie pomóc nam oraz innym zainteresowanym tym tematem po przez organizacje zdobytej wiedzy.
 Wszystkie opisy związane z powstającą aplikacją powinny byt tu dostępne, wraz z wyjaśnieniami oraz ilustracjami.
 
 ## [Teoria, na podstawie które tworzona jest aplikacja](theory)
 
 ## [Budowa aplikacji oraz rozwiązania techniczne](technical_details)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Zespół
 
-```markdown
-Syntax highlighted code block
+Zespół realizujący projekt składa się z sześciu studentów. Studenci są podzieleni na trzy dwuosobowe zespoły realizujące zadania, nie koniecznie różne.
 
-# Header 1
-## Header 2
-### Header 3
+Obecny podział wygląda następująco:
 
-- Bulleted
-- List
+### zespół pierwszy: realizujący cykl Krebsa
 
-1. Numbered
-2. List
+- Patryk Ławski
+- Maciej Warchoł
 
-**Bold** and _Italic_ and `Code` text
+### zespół drugi: realizujący translacje(?)
 
-[Link](url) and ![Image](src)
-```
+- Łukasz Gajewski
+- Michał Zygmunt
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### zespół trzeci: realizujący cykl Krebsa oraz prowadzący stronę projektu
 
-### Support or Contact
+- Maciej Makówka (makowka@student.agh.edu.pl)
+- Krzysztof Węgrzyński (krzysiu06123@gmail.com)
 
-Having trouble with application or the knowledge on this page? Check out our [wiki](https://help.github.com/categories/github-pages-basics/) or [contact team](mailto: makowka@student.agh.edu.pl) and we’ll help you sort it out.
+## Linki
+
+### Repozytoria
+
+[Główne repozytorium projketu](https://github.com/miczyg/cell-simulation)
+
+[Repozytorium zespołu trzeciego(Maciej Makówka oraz Krzysztof Węgrzyński)](https://github.com/wegrzyns/CellModel)
+
+Powyższe repozytorium jest używane ze względu na większą wygodę użytkownia w trakcie tworzenia projektu.
+Stworzony tutaj kod oraz pliki źródłowe strony projektu zostaną umieszczone na repozytorium głównym projektu.
