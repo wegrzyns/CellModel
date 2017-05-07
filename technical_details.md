@@ -36,7 +36,7 @@ W ramach wykonywanego symulatora, zespół stworzył bazę reakcji wykorzystywan
 Została ona wykorzystana w pracach zespołu trzeciego, który zmienił format zapisu reakcji na format JSON, z uwzględnieniem innych, dodatkowych, parametrów.
 
 Wspomniana baza reakcji została przedstawiona na ilustracji poniżej: 
-![ReactionsSet](ReactionsSet.png "ReactionsSet")
+![ReactionsSet](img/ReactionsSet.png "ReactionsSet")
 
 
 ## Implementacja zaproponowana przez zespół drugi (Gajewski, Zygmunt)
@@ -54,7 +54,7 @@ TODO.... ilustracja.
 
 
 Schemat translacji w podejściu teoretycznym:
-![TranslationScheme1](TranslationScheme1.png "TranslationScheme1")
+![TranslationScheme1](img/TranslationScheme1.png "TranslationScheme1")
 za wikipedia.org
 
 
@@ -71,7 +71,7 @@ Mimo to, udało się znaleźć pewne słabości jednej i drugiej symulacji i w r
 Ten zespół, zaproponował swój format zapisu reakcji oraz struktury programu, który polegał na wykorzystaniu narzędzia automatyzującego budowę oprogramowania - Gradle. Na format zapisu rekacji został natomiast wybrany JSON, który wydawał się zdecydowanie bardziej czytelny dla wielu reakcji o wielu różnych parametrach. 
 Zapis reakcji tego zespołu został przedstawiony na ilustracji poniżej:
 
-![ReactionsMW](ReactionsMW.png "ReactionsMW")
+![ReactionsMW](img/ReactionsMW.png "ReactionsMW")
 
 Przykład wyniku działania omawianego modułu przedstawia ilustracja poniżej:
 
@@ -86,6 +86,14 @@ Ustalenie wspólnego rdzenia ma za zadanie pomóc w realizacji integracji pracy 
 
 Ustalony model danych reprezentuje się następująco:
 
-TODO diagram klas?
+![CoreDataModel](img/CoreDataModel.jpg "CoreDataModel")
 
-TODO opisy, np. jakie dane sa w Komórce, jakie w cząstce itd...
+Opisy oraz uzasadnienia:
+- Komórka(Cell) jest reprezentowana jako "worek" zasobów, bez uwzględniania innych parametrów takich jak położenie poszczególnych cząstek, błona komórka czy inne elementy komórki priokariotycznej
+- Zbiór zasobów(ResourcePool) będący dekoratorem mapy. Zasoby komórki są reprezentowane jako typ komórki(ParticleType) będącym obecnie typem słownikowym, oraz listę cząstek.
+Długość listy cząstek reprezentuje ilość cząstek w danym zbiorze. Taka konstrukcja pozwala na przydzielenie różnych parametrów do wielu cząstek tego samego typu, np. ich rozmieszczenie w komórce.
+- Cząstka(Particle, metabolit?) podstawowa jednostka na podstawie której zachodzą reakcje. Cząstka może być substratem, produktem lub enzymem danej reakcji.
+ Cząstki są reprezentowane jako atomowe byty, nie istnieje ani nie jest planowany ich podział na poszczególne molekuły oraz ich połączenia.
+ Opis cząstki zawiera jej nazwę(łańcuch znakowy jednoznacznie ją określający), położenie przestrzeni oraz jej energię.
+ Trzeba zaznaczyć, iż w obecnej postaci systemu, parametry położenia oraz energii nie są wykorzystywane.
+- Położenie(Location) klasa zawierająca opis położenia cząstki. Obecna projekt systemu zakłada dwuwymiarowy system współrzędnych.

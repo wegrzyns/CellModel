@@ -116,7 +116,7 @@ Nie ma drogi na skróty, wiele znanych rozwiązań okazuje się nieskutecznych, 
 ### Schemat systemu do którego zespół dąży
 
 Ilustracja 2 - schemat systemu odpowiadającego za metabolizm(?) przedstawiony przez Prof. Bernarda Korzeniowskiego
-![SystemSchematic](SystemSchemaProfBernard.jpg "SystemSchematic")
+![SystemSchematic](img/SystemSchemaProfBernard.jpg "SystemSchematic")
 
 Objaśnienia:
 - przepływy/szybkości reakcji określane przez symbol V np. V<sub>1</sub>
