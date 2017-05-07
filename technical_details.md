@@ -7,6 +7,9 @@ Tworzony model symulacyjny będzie systemem dyskretnym, tworzonym na wzór autom
 
 Modelowanie będzie polegać na obliczaniu stanu komórki w poszczególnym krokach symulacji, które mogą reprezentować upływ czasu.
 
+Poniższa ilustracja przedstawia idee modelu symulacyjnego:
+![SymulationModel](img/ModelVisualization.jpg "SymulationModel")
+
 
 ## Wizualizacja
 
