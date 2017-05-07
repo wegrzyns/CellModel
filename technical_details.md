@@ -22,9 +22,6 @@ Rozważana jest dwuwymiarowa wizualizacja modelowanej komórki lub jej części,
 - Guice
 
 
-## next
-
-
 # Implementacja w iteracji #1
 
 Pierwsza faza implementacji symulatora komórki:
@@ -79,3 +76,16 @@ Zapis reakcji tego zespołu został przedstawiony na ilustracji poniżej:
 Przykład wyniku działania omawianego modułu przedstawia ilustracja poniżej:
 
 TODO ilustracja .... 
+
+## Podsumowanie iteracji
+
+W iteracji tej udało się rozpocząć pracę na poszczególnymi modułami, zaczynając w prostej formie z racji skomplikowania zagadnienia i edukacyjnego charakteru zajęć.
+
+Jako wniosek iteracji, zespół postanowił ustalić wspólny rdzeń systemu, którym jest model danych. 
+Ustalenie wspólnego rdzenia ma za zadanie pomóc w realizacji integracji pracy wszystkich zespołów.
+
+Ustalony model danych reprezentuje się następująco:
+
+TODO diagram klas?
+
+TODO opisy, np. jakie dane sa w Komórce, jakie w cząstce itd...

@@ -17,7 +17,7 @@ Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie w
 4. Odkrycie mechanizmu informatycznego lub wskazówek mogących pomóc w jego odnalezieniu
 5. Utworzenie konfigurowalnego modelu
 6. Pokazanie symulowanych fragmentów w przejrzysty sposób 
-7. Pokazanie symulowanej komórki i jej parametróww czasie t<sub>1</sub>, t<sub>2</sub>, ..., t<sub>n</sub> w możliwie czytelny sposób (zarówno graficzny jak i tekstowy). 
+7. Pokazanie symulowanej komórki i jej parametrów czasie t<sub>1</sub>, t<sub>2</sub>, ..., t<sub>n</sub> w możliwie czytelny sposób (zarówno graficzny jak i tekstowy). 
 
 ## Teoretyczne wymogi implementacji
 
@@ -115,10 +115,8 @@ Nie ma drogi na skróty, wiele znanych rozwiązań okazuje się nieskutecznych, 
 
 ### Schemat systemu do którego zespół dąży
 
-TODO porzadna ilustracja
-
 Ilustracja 2 - schemat systemu odpowiadającego za metabolizm(?) przedstawiony przez Prof. Bernarda Korzeniowskiego
-![SystemSchematic](StubSystemSchematic.jpg "SystemSchematic")
+![SystemSchematic](SystemSchemaProfBernard.jpg "SystemSchematic")
 
 Objaśnienia:
 - przepływy/szybkości reakcji określane przez symbol V np. V<sub>1</sub>
