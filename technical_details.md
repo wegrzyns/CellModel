@@ -55,6 +55,16 @@ Przykład wyniku działania omawianego modułu został przedstawiony na ilustrac
 
 TODO.... ilustracja.
 
+
+Schemat translacji w podejściu teoretycznym:
+![TranslationScheme1](TranslationScheme1.png "TranslationScheme1")
+za wikipedia.org
+
+
+Schemat translacji w podejściu implementacyjnym: 
+
+TODO....ilustracja
+
 ## Implementacja zaproponowana przez zespół trzeci (Makówka, Węgrzyński)
 
 Trzeci zespół, podobnie jak pierwszy, również odpowiedzialny był na implementację symulacji cyklu Krebsa. Doktor nadzorujący prace, chciał bowiem wprowadzić do prac element konkurencji, tak by otrzymać kilka rywalizujących ze sobą rozwiązań i wybrać najlepsze z nich. 
