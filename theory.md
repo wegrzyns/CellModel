@@ -3,11 +3,10 @@
 
 ## Wstęp
 
-Celem projektu jest stworzenie symulacji części komórki. Symulacja ta ma się odbywać przy pomocy pewnego deterministycznego automatu skończonego.
-Jako, że symulacja przy pomocy modelowania systemu fizycznego i oddziaływań kulombowskich, czyli wszystkich cząstek oraz interakcji między nimi okazała sie jak dotąd nie skuteczna.
-Symulacja przy pomocy automatu jest również łatwiejsza w implementacji, i może pomóc w zdobyciu nowego spojrzenia na sposób działania komórki.
+Celem projektu jest stworzenie symulacji części komórki. Symulacja ta ma się odbywać przy pomocy pewnego deterministycznego automatu skończonego jako, że symulacja przy pomocy modelowania systemu fizycznego i oddziaływań kulombowskich, czyli wszystkich cząstek oraz interakcji między nimi okazała sie jak dotąd nie skuteczna.
+Ponadto symulacja przy pomocy automatu jest przypuszczalnie łatwiejsza w implementacji, i może pomóc w zdobyciu nowego spojrzenia na sposób działania komórki.
 
-Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie wierniej symulacji komórki może być wielokrotnie bardziej skomplikowane od takich przedsięwzięć jak załogowa podróż na marsa.
+Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie wierniej symulacji komórki może być wielokrotnie bardziej skomplikowane od takich przedsięwzięć jak załogowa podróż na Marsa.
 
 
 ## Cele projektu
@@ -21,22 +20,25 @@ Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie w
 ## Istniejące aplikacje do modelowania komórki
 
 Zagadnieniem modelowania komórki zajmuje się wiele zespołów naukowców na całym świecie.
-W trakcie trwania zajęć zostały nam wymieniony dwa takie projekty czy też aplikacje, są to:
+W trakcie trwania zajęć zostały nam przedstawione dwa takie projekty czy też aplikacje, są to:
 
 1. CHARMM<sup>[[1]](#ref1)</sup>
 2. GROMACS<sup>[[2]](#ref2)</sup>
 
 
-Systemy te są oparte na symalcji fizycznych zjawisk, zachodzących w komórce i są według wiedzy ekspertów przedstawionej w czasie trwania zajęć - mało dokładne.
+Systemy te są oparte na symulacji fizycznych zjawisk, zachodzących w komórce i są, według wiedzy ekspertów przedstawionej w czasie trwania zajęć, mało dokładne.
 
 ## Rodzaje komórek
 
-### Prokariotyczna
+Komórka, czyli najmniejsza strukturalna i funkcjonalna jednostka organizmów żywych zdolna do przeprowadzania wszystkich podstawowych procesów życiowych (takich jak przemiana materii, wzrost i rozmnażanie). Jest podstawową jednostką
+morfologiczno-czynnościową ustroju. Spośród komórek należy wyróżnić komórki:
 
-Mniej skomplikowany rodzaj komórki, nie posiadający jądra komórkowego oraz organelli.
+### Prokariotyczne
 
-Jest to rodzaj komórki który będzie modelowany, a konkretnie będzie to pałeczka okrężnicy(w skrócie z ang. E. coli).
-Wybór ten uzasadniamy ogromną wiedzą zdobytą na temat tej komórki, co jest dostępne w różnego rodzaju zbiorach danych.
+Mniej skomplikowany rodzaj komórki, nieposiadający jądra komórkowego oraz organelli.
+
+Jest to rodzaj komórki który będzie przez zespół modelowany, a konkretnie będzie to pałeczka okrężnicy (w skrócie z ang. E. coli).
+Wybór ten uzasadniamy ogromną wiedzą zdobytą na temat tej komórki, która jest dostępna w różnego rodzaju zbiorach danych oraz publikacjach.
 
 Ilustracja 1<sup>[[3]](#ref3)</sup> - Struktura komórki prokariotycznej
 ![ProkaryoticCellSchema](https://upload.wikimedia.org/wikipedia/commons/e/e4/Prokaryote_cell_diagram_international.svg "ProkaryoticCell")
@@ -52,7 +54,7 @@ Legenda:
 8. wić
 
 
-### Eukariotyczna
+### Eukariotyczne
 
 Bardziej skomplikowany typ komórki. Komórki tego rodzaju tworzą organizmy wielokomórkowe, czyli między innymi ludzi.
 Zespół nie będzie zajmował się symulacją tego typu komórki ze względu na ograniczenia czasowe oraz poziom jej skomplikowania.

@@ -3,7 +3,7 @@
 Jesteśmy grupą studentów która uczęszcza na zajęcia z  "Modelowania i Symulacji systemów" na Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie. 
 
 Nasz zespół pracuję nad projektem związanym z symulacją komórki prokariotycznej. Ta strona ma za zadanie pomóc nam oraz innym zainteresowanym tym tematem po przez organizacje zdobytej wiedzy.
-Wszystkie opisy związane z powstającą aplikacją powinny byt tu dostępne, wraz z wyjaśnieniami oraz ilustracjami.
+Wszystkie opisy związane z powstającą aplikacją powinny być tu dostępne, wraz z wyjaśnieniami oraz ilustracjami.
 
 ## [Teoria, na podstawie które tworzona jest aplikacja](theory)
 
@@ -34,9 +34,9 @@ Obecny podział wygląda następująco:
 
 ### Repozytoria
 
-[Główne repozytorium projketu](https://github.com/miczyg/cell-simulation)
+[Główne repozytorium projektu](https://github.com/miczyg/cell-simulation)
 
-[Repozytorium zespołu trzeciego(Maciej Makówka oraz Krzysztof Węgrzyński)](https://github.com/wegrzyns/CellModel)
+[Repozytorium zespołu trzeciego (Maciej Makówka oraz Krzysztof Węgrzyński)](https://github.com/wegrzyns/CellModel)
 
 Powyższe repozytorium jest używane ze względu na większą wygodę użytkownia w trakcie tworzenia projektu.
 Stworzony tutaj kod oraz pliki źródłowe strony projektu zostaną umieszczone na repozytorium głównym projektu.
