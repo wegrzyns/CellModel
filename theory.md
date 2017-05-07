@@ -16,8 +16,17 @@ Modelowanie komórki jest zadaniem bardzo trudnym, ocenia się, że stworzenie w
 3. Modelujemy fragment ale chcemy, aby był on użyteczny
 4. Odkrycie mechanizmu informatycznego lub wskazówek mogących pomóc w jego odnalezieniu
 5. Utworzenie konfigurowalnego modelu
+6. Pokazanie symulowanych fragmentów w przejrzysty sposób 
+7. Pokazanie symulowanej komórki i jej parametróww czasie t<sub>1</sub>, t<sub>2</sub>, ..., t<sub>n</sub> w możliwie czytelny sposób (zarówno graficzny jak i tekstowy). 
 
-## Istniejące aplikacje do modelowania komórki
+## Teoretyczne wymogi implementacji
+
+1. Zamodelowanie cząsteczek
+2. Wykorzystanie sztucznej inteligencji (do synchronizacji - określona temperatura, ciśnienie, układ oraz ruch cząsteczek - tak by nie było konieczności wprowadzania wszystkich parametrów dla każdej cząsteczki z osobna za każdym razem). 
+3. Stworzenie języku opisu komórki 
+
+
+## Istniejące źródła inspiracji w dziedzinie modelowania komórki
 
 Zagadnieniem modelowania komórki zajmuje się wiele zespołów naukowców na całym świecie.
 W trakcie trwania zajęć zostały nam przedstawione dwa takie projekty czy też aplikacje, są to:
@@ -25,8 +34,15 @@ W trakcie trwania zajęć zostały nam przedstawione dwa takie projekty czy też
 1. CHARMM<sup>[[1]](#ref1)</sup>
 2. GROMACS<sup>[[2]](#ref2)</sup>
 
-
 Systemy te są oparte na symulacji fizycznych zjawisk, zachodzących w komórce i są, według wiedzy ekspertów przedstawionej w czasie trwania zajęć, mało dokładne.
+
+
+Istotny wpływ na analizę problemu mogą stanowić doświadczenia naukowców zajmujących się badaną przez zespół dziedziną:
+
+1. Natalio Krasnogor - zajmujący się modelem deterministycznym (takim, jakim zajmuje się zespół) a nie modelem kulombowskim. 
+2. Elijah Roberts 
+3. Jonathan Karr [http://www.karrlab.org/]
+
 
 ## Rodzaje komórek
 
