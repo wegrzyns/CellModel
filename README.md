@@ -9,7 +9,7 @@ Wszystkie opisy związane z powstającą aplikacją powinny być tu dostępne, w
 
 ## [Budowa aplikacji oraz rozwiązania techniczne](technical_details)
 
-## [Wizja rozwiązania] (solution_template)
+## [Wizja rozwiązania](solution_template)
 
 ## Zespół
 
