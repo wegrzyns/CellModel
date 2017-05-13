@@ -9,6 +9,8 @@ Wszystkie opisy związane z powstającą aplikacją powinny być tu dostępne, w
 
 ## [Budowa aplikacji oraz rozwiązania techniczne](technical_details)
 
+## [Wizja rozwiązania] (solution_template)
+
 ## Zespół
 
 Zespół realizujący projekt składa się z sześciu studentów. Studenci są podzieleni na trzy dwuosobowe zespoły realizujące zadania, nie koniecznie różne.
