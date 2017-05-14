@@ -124,9 +124,9 @@ Objaśnienia:
 
 - cząsteczki a, proste, mają identyczny wzór chemiczny oraz strukturę przestrzenną
 
-![Aparticle](img/Aparticle.jpg "Aparticle")
+
 - cząsteczki b, złożone i długie, bardzo powtarzalna struktura
-![Bparticle](img/Bparticle.jpg "Bparticle")
+
 
 ### Parametry cząstki
 
@@ -144,7 +144,7 @@ Objaśnienia:
     
 - stany logiczne
     - np. przyłączenie cząstki pod innym kątem może dać inny rezultat
-![LogicStateExample](img/LogicStateExample.jpg "LogicStateExample")    
+  
 
 
 
