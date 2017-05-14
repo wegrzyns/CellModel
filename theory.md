@@ -86,27 +86,13 @@ Synchronizacja powielania komórkowego jest trudnym zagadnieniem.
 
 ### Systemy
 
-#### Dynamiczne
-
-Kilka elementów.
-
-#### Termodynamiczne
-
-Wiele elementów, jeden rodzaj interakcji.
-
-#### Biologiczne
-
-Zbiór różnych elementów, hierarchiczny, bogaty zbiór interakcji.
-
-#### Równania Maxwella
-
-#### Linear flux-force relationship
-
-#### Phosphorylation potential
-
-#### Free energy of ATP hydrolysis
-
-Zmiany ATP, ADP i P<sub>i</sub> są różna dla różnych warunków.
+- Dynamiczne: kilka elementów
+- Termodynamiczne: wiele elementów, jeden rodzaj interakcji
+- Biologiczne: zbiór różnych elementó, hierarchiczny, bogaty zbiór interkacji
+- Równania Maxwella
+- Linear flux-force relationship
+- Phosphorylation potential
+- Free energy of ATP hydrolysis: zmiany ATP, ADP i P<sub>i</sub> są różna dla różnych warunków
 
 ### Podsumowanie
 
@@ -131,6 +117,36 @@ Objaśnienia:
 - stworzenie modelu na komputere(tymczasowy)
 - wielokrotne testy(z dostępnych źródeł)
 - w razie potrzeby modyfikacja modelu
+
+## Cząstki
+
+### Rodzaje cząstek
+
+- cząsteczki a, proste, mają identyczny wzór chemiczny oraz strukturę przestrzenną
+
+![Aparticle](img/Aparticle.jpg "Aparticle")
+- cząsteczki b, złożone i długie, bardzo powtarzalna struktura
+![Bparticle](img/Bparticle.jpg "Bparticle")
+
+### Parametry cząstki
+
+- identyfikator pozwalający na jednoznaczne określenie cząstki, może to być
+    - liczba
+    - nazwa cząstki
+    - wzór cząstki
+    
+- położenie cząstki w komórce, w zależności od poziomu skomplikowania modelu może to być
+    - położenie w dwuwymiarowym układzie współrzędnych(2D)
+    - położenie w trójwymiarowym układzie współrzędnych(3D)
+    
+- energia cząstki
+    - odwzorowanie i zachowanie bilansu energetycznego reakcji
+    
+- stany logiczne
+    - np. przyłączenie cząstki pod innym kątem może dać inny rezultat
+![LogicStateExample](img/LogicStateExample.jpg "LogicStateExample")    
+
+
 
 
 
