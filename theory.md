@@ -118,6 +118,16 @@ Objaśnienia:
 - wielokrotne testy(z dostępnych źródeł)
 - w razie potrzeby modyfikacja modelu
 
+## Docelowy model
+
+Zespół dąży do utworzenia modelu nie tylko komórki, ale też jej otoczenia.
+Ważne jest bowiem uwzględnienie uzyskiwania zasobów przez komórkę, z jej otoczenia.
+
+Ilustracja 3 - poglądowy rysunek modelu
+
+![TargetModel](img/TargetModel.jpg "TargetModel")
+
+
 ## Cząstki
 
 ### Rodzaje cząstek
@@ -127,6 +137,8 @@ Objaśnienia:
 ![Aparticle](img/Aparticle.jpg "Aparticle")
 - cząsteczki b, złożone i długie, bardzo powtarzalna struktura
 ![Bparticle](img/Bparticle.jpg "Bparticle")
+
+Cząstką może być substrat, produkt lub enzym reakcji. W zależności od konkretnego przypadku będzie on przechowywany jako cząstka typu a lub b.
 
 ### Parametry cząstki
 
@@ -144,8 +156,29 @@ Objaśnienia:
     
 - stany logiczne
     - np. przyłączenie cząstki pod innym kątem może dać inny rezultat
+
+Ilustracja 4 - przykładowy wpływ stanu logicznego na reakcję
 ![LogicStateExample](img/LogicStateExample.jpg "LogicStateExample")    
 
+### Parametry reakcji
+
+- zmiana parametrów cząstki
+    - zmiana położenia(przemieszczenie)
+    - zmiana energii
+    - zmiana stanu logicznego
+- usunięcie cząstki z zasobów, może by wywołane:
+    - złączeniem danej cząstki z inną
+    - uwolnieniem cząstki
+- dodanie nowej cząstki do zasobów
+    - pobranie zasobów z otoczenia
+- determinizm lub jego celowy brak
+    - determinizm: reakcja zachodzi zawsze jeżeli są dostępne zasoby
+    - brak determinizmu: istnieje pewna szansa na zajście reakcji mimo dostępnych zasobów
+- reakcja rezerwuje cząstki biorące w niej udział
+    - oznacza to, że są one wykluczone z zasobów do następnego kroku symulacji
+    
+    
+    
 
 
 
