@@ -41,6 +41,8 @@ Została ona wykorzystana w pracach zespołu trzeciego, który zmienił format z
 Wspomniana baza reakcji została przedstawiona na ilustracji poniżej: 
 ![ReactionsSet](img/ReactionsSet.png "ReactionsSet")
 
+[Rezultat działania programu dla cyklu Krebsa](link team1_iteration1_results)
+
 
 ## Implementacja zaproponowana przez zespół drugi (Gajewski, Zygmunt)
 
