@@ -111,7 +111,13 @@ TODO: REFERENCE DO TYCH BAZ DANYCH, tutaj albo na stronie głównej
 
 ## Implementacja zaproponowana przez zespół pierwszy (Ławski, Warchoł)
 
+TODO
+
 ## Implementacja zaproponowana przez zespół drugi (Gajewski, Zygmunt)
+
+Zespół skoncentrował się na opracowaniu metody korzystania z dostarczonej bazy danych. 
+Zdecydowano się również na połączenie tworzonego elementu symulacji z pozostałymi zespołami, poprzez próbę tłumaczenia
+określonych sekwencji kodu DNA na konkretne cząstki, używane w symulacji.
 
 ## Implementacja zaproponowana przez zespół trzeci (Makówka, Węgrzyński)
 
@@ -127,3 +133,5 @@ Tworzona dokumentacja ma na celu zachowanie:
 Efektem prac nad dokumentacją jest obecnie przeglądaną stroną.
 
 ## Podsumowanie iteracji
+
+Brak, iteracja jest w trakcie realizacji.
