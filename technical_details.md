@@ -104,3 +104,26 @@ Długość listy cząstek reprezentuje ilość cząstek w danym zbiorze. Taka ko
 - Położenie(Location) klasa zawierająca opis położenia cząstki. Obecna projekt systemu zakłada dwuwymiarowy system współrzędnych.
 
 # Implementacja w iteracji #2
+
+Druga faza implementacji symulatora komórki. 
+Głównym wyzwaniem tej fazy było opracowanie metody korzystania z istniejących baz danych, wypełnianych przez profesjonalnych badaczy:
+TODO: REFERENCE DO TYCH BAZ DANYCH, tutaj albo na stronie głównej
+
+## Implementacja zaproponowana przez zespół pierwszy (Ławski, Warchoł)
+
+## Implementacja zaproponowana przez zespół drugi (Gajewski, Zygmunt)
+
+## Implementacja zaproponowana przez zespół trzeci (Makówka, Węgrzyński)
+
+Zespół zajął się pełnym ukończeniem implementacji symulacji cyklu Krebsa.
+Podjęte zostały próby uwzględnienia nowych czynników takich jak błona komórkowa.
+Użyty został również wzorzec projektowy strategia w celu przygotowania aplikacji na pobór danych z różnych źródeł, takich jak pliki w formacie json czy też inne związane z konkretną implementacją bazy danych.
+
+Prace nad implementacją aplikacji zostały następnie zamrożone, na rzecz utworzenia dokumentacji projektu.
+Tworzona dokumentacja ma na celu zachowanie:
+ - wiedzy eksperckiej przedstawionej podczas trwania zajęć
+ - rozwiązań zaimplementowanych i zaproponowanych przez zespół realizujący projekt
+ 
+Efektem prac nad dokumentacją jest obecnie przeglądaną stroną.
+
+## Podsumowanie iteracji
