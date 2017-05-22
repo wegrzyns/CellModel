@@ -1,7 +1,7 @@
 # Opis :: Iteracja 1 :: Cykl Krebsa output 
 
-Poniøszej przedstawiony zosta≥ rezultat dzia≥ania modu≥u odpowiedzialnego za cykl Krebsa w implementacji iteracji 1 zespo≥u pierwszego. 
-Wykonanych zosta≥o 9 krokÛw, kaødy z nich zosta≥ opisany (= resourcespool, reactions) w ramach outputu. 
+Poni≈ºszej przedstawiony zosta≈Ç rezultat dzia≈Çania modu≈Çu odpowiedzialnego za cykl Krebsa w implementacji iteracji 1 zespo≈Çu pierwszego. 
+Wykonanych zosta≈Ço 9 krok√≥w, ka≈ºdy z nich zosta≈Ç opisany (= resourcespool, reactions) w ramach outputu. 
 
 
 ```

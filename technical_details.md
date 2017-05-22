@@ -102,3 +102,5 @@ Długość listy cząstek reprezentuje ilość cząstek w danym zbiorze. Taka ko
  Opis cząstki zawiera jej nazwę(łańcuch znakowy jednoznacznie ją określający), położenie przestrzeni oraz jej energię.
  Trzeba zaznaczyć, iż w obecnej postaci systemu, parametry położenia oraz energii nie są wykorzystywane.
 - Położenie(Location) klasa zawierająca opis położenia cząstki. Obecna projekt systemu zakłada dwuwymiarowy system współrzędnych.
+
+# Implementacja w iteracji #2
