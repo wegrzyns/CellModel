@@ -6,9 +6,14 @@
 Realizacja projektu, wymagała przygotowania mockupów prezentujących wizję oprogramowania opracowaną przez jej projektantów, w celu zaprezentowania jej zarówno osobom nadzorującym projekt, jak również programistom i grafikom komputerowym, odpowiedzialnym za jego wytworzenie. 
 W dalszej części, przedstawione więc zostały zarówno poglądowe ilustracje tego co powinno się znaleźć w programie, jak również opisy koniecznych ekranów i funkcji. 
 
+Ważnym aspektem wykonywanego projektu lub przyszłych projektów o tej tematyce jest wygodny interfejs użytkownika. Tworzona aplikacja
+ma być narzędziem używanym przez ekspertów w dziedzinie i jego stosowanie powinno ułatwiać ich pracę. Ważne jest także wyedukowanie potencjalnych
+użytkowników co do aplikacji, oraz wielu innych istniejących już rozwiązań. Istnieje bardzo duża liczba aplikacji symulacyjnych, jednakże
+nie są one wykorzystywane praktycznie w polsce.
+
 ## Opis
 
-Some description
+Poniżej zostały przedstawione wstępne atrapy interfejsu użytkownika.
 
 ## Mockup's
 

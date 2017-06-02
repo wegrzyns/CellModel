@@ -81,6 +81,16 @@ Zespół nie będzie zajmował się symulacją tego typu komórki ze względu na
 Ze względu na modelowanie jedynie fragmentu komórki, zespół nie będzie zajmował się zagadnieniem powielania komórkowego.
 Synchronizacja powielania komórkowego jest trudnym zagadnieniem.
 
+## Model przestrzenny wnętrza komórki
+
+Brane pod uwagę są dwie możliwości:
+- komórka jest reaktorem, maszynerią, sprowadza się to do założenia, że cząstki znajdujące się w komórce 'przeszkadzają'
+sobie na wzajem, np. poprzez zajmowanie istotnego miejsca
+- komórka jest workiem dyfudującym, cząstki nie przeszkadzają sobie na wzajem w reakcjach, jest to łatwiejszy w modelowaniu wariant
+
+Wiedza ekspertów przedstawiona podczas trwania zajęć sugeruję, że nie do końca wiadomo, która z powyższych opcji jest prawdziwa w naturze.
+Sugerowane jednak było, że podejście mówiące o komórce jako rektorze jest bliższe prawdzie.
+
 
 ## Metabolizm bakterii
 
@@ -176,6 +186,7 @@ Ilustracja 4 - przykładowy wpływ stanu logicznego na reakcję
     - brak determinizmu: istnieje pewna szansa na zajście reakcji mimo dostępnych zasobów
 - reakcja rezerwuje cząstki biorące w niej udział
     - oznacza to, że są one wykluczone z zasobów do następnego kroku symulacji
+- odwracalność reakcji
     
     
     

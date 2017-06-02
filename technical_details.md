@@ -111,7 +111,11 @@ TODO: REFERENCE DO TYCH BAZ DANYCH, tutaj albo na stronie głównej
 
 ## Implementacja zaproponowana przez zespół pierwszy (Ławski, Warchoł)
 
-TODO
+Zespół ten zajął się opracowaniem metody korzystania z dostarczonej bazy danych, oraz jej integracji z istniejącym rdzeniem aplikacji.
+Zadaniem tego zespołu było również analizą stochiometrii. Polegało to na ustaleniu ogólnego stosunku ilościowego cząstek, 
+tak aby było możliwe ich dyskretna reprezentacja w systemie(cząstka - obiekt). Analiza wykazała, że rząd wielkości ilości potrzebnych cząstek
+wynosi ~10<sup>10</sup>, co zgadza się z teoretyczną wiedzą prowadzącego. Tak duża liczba cząstek przedstawia poważny problem w kwestii zużycia
+pamięci operacyjnej, zaistniała więc potrzeba zrównoleglenia działania aplikacji. 
 
 ## Implementacja zaproponowana przez zespół drugi (Gajewski, Zygmunt)
 
@@ -134,4 +138,22 @@ Efektem prac nad dokumentacją jest obecnie przeglądaną stroną.
 
 ## Podsumowanie iteracji
 
-Brak, iteracja jest w trakcie realizacji.
+Reasumując, w iteracji tej utworzona została dokumentacja projektu, zintegrowane zostały zewnętrzne źródła danych oraz wykonana została
+próba przekształcenia aplikacji dotychczas jednowątkowej w aplikację wielowątkową.
+
+Urównoleglenie aplikacji okazało się być nie trywialnym problemem. Rozważane było kilka podejść do tego zagadnienia:
+- podejście przestrzenne zakładające uaktywnienie parametru położenia cząstek. Podejście to zakłada podzielenie zasobów komórki - tzw. worka
+na mniejsze worki, z uwzględnieniem pozycji tych mniejszych obszarów względem siebie. Wstępnie, pozycje cząstek w tym modelu były by generowane automatycznie, poprzez losowanie.
+- podejście nie przestrzenne, zakładające podział komórki na worki nie mające odwzorowanie przestrzennego
+
+
+Przykładowy model podejścia przestrzennego(na wzór szachownicy):
+![ExampleSpatialModel](img/ExampleSpatialModel.jpg "ExampleSpatialModel")
+
+
+Ważnymi parametrami rozważnych modeli jest także komunikacja pomiędzy wątkami. W czasie implementacji poruszone zostały zagadnienia takie jak:
+- uwzględnienia czasu jako kroku symulacji - model synchroniczny/asynchroniczny, model asynchroniczny pozwala na uproszczenie komunikacji
+- ilość oraz postać przesyłanych informacji, jakie dane będą synchronizowane?
+- częstotliwość komunikacji
+  - ustalana statycznie - co X kroków następuję wymiana informacji
+  - ustalana przez algorytm - wywoływana np. określonym poziomem parametrów(np. duża ilość cząstek relatywnie do sąsiadów)
