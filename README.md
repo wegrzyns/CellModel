@@ -7,7 +7,7 @@ Wszystkie opisy związane z powstającą aplikacją powinny być tu dostępne, w
 
 ## [Teoria, na podstawie które tworzona jest aplikacja](theory)
 
-## [Budowa aplikacji oraz rozwiązania techniczne](technical_details)
+## [Rozwiązania techniczne oraz budowa aplikacji](technical_details)
 
 ## [Wizja rozwiązania](solution_template)
 
